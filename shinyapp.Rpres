@@ -1,0 +1,45 @@
+Presenter for shinyappCoursera
+========================================================
+author: Mingzhu Ye
+date: Jun 18th,  2015
+
+Why build this shinyapp?
+========================================================
+
+- to get started with shiny
+- to review some common datasets we learned in the Data Science Specialization
+- to get new ideas from our reviews
+
+Basic linear regression model of mtcars
+========================================================
+
+```{r, echo=FALSE}
+library(datasets)
+data(mtcars)
+```
+
+```{r, echo = TRUE}
+fitmodel <- lm(mpg~cyl+hp+wt+gear,data = mtcars)
+```
+
+```{r, echo=TRUE}
+summary(fitmodel)$coefficients
+```
+
+Basic plot of airquality
+========================================================
+
+```{r, echo=T, fig=TRUE}
+data(airquality)
+library(ggplot2)
+qplot(airquality$Month, airquality$Ozone, colour= airquality$Month, main =c("Ozone vs Month"), xlab = c("Month"), ylab = c("Ozone")) + geom_smooth()
+```
+
+Combine shiny with Rstudio and build your own app. How exciting!
+================================================================
+
+- in my shinyappCoursera, I choose four datasets
+- you can basically get summary information for either dataset on my app
+- I use widgets(sliderInput, selectInput, textInput), submitButton in my app
+- I can add more function to the shinyapp after getting new ideas from the dataset
+- to be continued...
